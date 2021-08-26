@@ -1,4 +1,3 @@
-
 clear all
 % c = vector de costos
 % A = matriz de coeficientes 
@@ -161,8 +160,17 @@ end
        
  end 
 % Criterio de la razon minima (candidato a salir de la base)
-function[]=yk(B)
+function[]=yk(B,k, b) %k es el indice de la variable candidata a entrar a la base
+    yk = []
+    yk = inv(B)* ak
+    for i = 1:length(XB)
+        min(yk(i)/XB(i))
+    end
+    %se toma la variable que haya tenido la razon minima, sera la candidata
+    %a salir de la base
 end
+%nueva base 
+
 % Hasta costos reducidos >= 0 ------------------------------
 
 % Fase 2 (Segun restricciones al terminar fase )
@@ -173,3 +181,4 @@ end
 
 % Dar solucion optimo finito, ´optimo no finito, multiples soluciones y 
 %solucion no factible. 
+
